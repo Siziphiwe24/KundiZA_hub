@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBM KundiZA Hub - Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="comment.css">
+</head>
+<body>
+    <header>
+        <h3>BookMySpace at IBM KundiZA</h3>
+    </header><br><br>
+    <div class=" terms">
+        <input type="checkbox" id="agree" name="agree">
+        <label>I agree to the <a href="booking.html" target="_blank">Guidlines and Principles</a></label>
+    </div><br><br>
+    <div class="container">
+        <form id="bookingForm" action="/book-room" method="POST">
+            <label for="room">Select Room:</label>
+            <select name="room" id="room">
+                <option value="empty"> </option>
+                <option value="Solution Briefing Room 1">Solution Briefing Room 1 (14 seater)</option>
+                <option value="Solution Briefing Room 2">Solution Briefing Room 2 (8 seater)</option>
+                <option value="Classroom 1">Classroom 1 (20 seater)</option>
+                <option value="Classroom 2">Classroom 2 (15 seater)</option>
+                <option value="Project Room 1">Project Room 1 (4 seater)</option>
+                <option value="Project Room 2">Project Room 2 (4 seater)</option>
+                <option value="CNFA.08">CNFA.08 (8 seater)</option>
+                <option value="Collaboration Room">Collaboration Room (65 seater)</option>
+                <!-- Add other rooms here -->
+            </select><br><br>
+
+            <label for="resources">Select Resources:</label>
+            <select name="resources" id="resources" onchange="toggleOtherCommentBox('resources', 'otherDetails')">
+                <option value="empty"> </option>
+                <!--<option value="None">N/A</option>-->
+                <option value="GUEST-WIFI ">Wi-Fi</option>
+                <option value="Mics">Mics</option>
+                <option value="HDMI Cables">HDMI Cables</option>
+                <!--<option value="Water">Water</option>-->
+                <!--<option value="Biscuits">Teas & Coffee - w/ Biscuits</option>-->
+                <!--<option value="Teas & Coffee">Teas & Coffee</option>-->
+                <option value="Laptops">Laptops</option>
+                <option value="Whiteboard & Markers">Whiteboard & Markers</option>
+                <option value="Other">Other</option>
+              </select><br><br>
+
+              <div id="otherDetails" style="display: none;">
+                <label for="otherComment">Please specifiy:</label><br>
+                <textarea id="otherComment" name="otherComment" placeholder="Specify other resources here"></textarea>
+              </div><br>
+            
+              <label for="businessunit">Select Business unit:</label>
+              <select name="businessunit" id="businessunit" onchange="toggleOtherCommentBox('businessunit', 'businessOtherDetails')">
+                  <option value="empty"> </option>
+                  <!--<option value="None">N/A</option>-->
+                  <option value="Technology">IBM Technology</option>
+                  <option value="Consulting">IBM Consulting</option>
+                  <option value="Finance">IBM Finance</option>
+                  <option value="HR">IBM HR</option>
+                  <option value="EEIP">EEIP</option>
+                  <option value="SED">SED</option>
+                  <option value="Skills Development">Skills Development</option>
+                  <option value="Trust and Compliance">Trust and Compliance</option>
+                  <option value="TLC">TLC</option>
+                  <option value="External/Other">External/Other</option>
+                </select><br><br>
+
+                <div id="businessOtherDetails" style="display: none;">
+                    <label for="businessOtherComment">Please Specify</label><br>
+                    <textarea id="businessOtherComment" name="businessOtherComment" placeholder="Please specify business unit here"></textarea>
+                </div>
+            
+
+            <label for="date">Date:</label>
+            <input type="date" name="date" id="date" required><br><br>
+
+            <label for="time">Time:</label>
+            <input type="time" name="time" id="time" required><br><br>
+
+            <label for="attendees">Duration:</label>
+            <input type="number" name="duration" id="duration" min="1" max="8" required><br><br>
+
+            <label for="attendees">Number of attendees:</label>
+            <input type="number" name="attendees" id="attendees" required><br><br>
+
+            <label for="email">Your Email:</label>
+            <input type="email" name="email" id="email" required><br><br>
+
+            <button type="submit">Submit Booking</button>
+        </form>
+    </div>
+    <script>
+        function toggleOtherCommentBox(dropdownId, commentBoxId){
+            const dropdown = document.getElementById(dropdownId);
+            const commentBox = document.getElementById(commentBoxId);
+
+            if ((dropdownId === 'resources' && dropdown.value === 'Other') || (dropdownId === 'businessunit' && dropdown.value === 'External/Other')){
+                commentBox.style.display = 'block';
+            }
+            else{
+                commentBox.style.display = 'none';
+            }
+        }
+        // JavaScript to prevent form submission if the checkbox is not checked
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            const agreeCheckbox = document.getElementById('agree');
+            
+            // If checkbox is not checked, prevent form submission
+            if (!agreeCheckbox.checked) {
+                event.preventDefault();
+                alert('Please agree to the Terms and Conditions before proceeding with the booking.');
+            }
+        });
+    </script>
+</body>
+</html>

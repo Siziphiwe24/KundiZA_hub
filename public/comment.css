@@ -1,0 +1,78 @@
+/* General form container styling */
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for form labels and inputs */
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Styling for the comment box */
+#otherDetails {
+    margin-top: 15px;
+}
+
+#otherComment {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Button styling */
+button {
+    background-color: #0072c6; /* IBM Blue */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #005a9e; /* Darker blue for hover */
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    background-color: #0072c6;
+    color: white;
+    padding: 10px 0;
+    border-radius: 4px;
+}
+
+/* Terms and checkbox */
+.terms {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.terms input[type="checkbox"] {
+    margin-right: 5px;
+}

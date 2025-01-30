@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  header {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  h2 {
+    color: #333;
+  }
+
+  .logo {
+    float: right;
+    left: 100%;
+    right: 100%;
+    max-width: 100%; /* Adjust the size as needed */
+    height: 100%; /* Maintain aspect ratio */
+    object-fit: cover;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  #image-container {
+    display: flex;
+    justify-content: center; /* Center the images horizontally */
+    align-items: center; /* Align images vertically */
+    min-height: 400px;
+    gap: 20px;  /*Add spacing between images */
+    /*flex-wrap: wrap;  Allow wrapping if there isn’t enough space */
+    /*margin-top: 20px 0;  Add spacing above the container */
+  }
+  #image-container{
+    height: auto;
+    margin: 20px auto;
+    max-width: 700px;
+    /*justify-content: right; /* Center the images horizontally 
+    align-items: center; /* Align images vertically 
+    gap: 20px; /* Add spacing between images *
+    flex-wrap: wrap; /* Allow wrapping if there isn’t enough space 
+    margin-top: 20px 0; /* Add spacing above the container */
+  }
+  .zozo {
+    max-width: 600px; /* Limit image size */
+    width: 100%; 
+    aspect-ratio: center;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain;  /*Ensure images scale nicely */
+  }
+  .popo {
+    float: right;
+    left: 100%;
+    right: 100%;
+    max-width: 200px; /* Limit image size */
+    width: 50%;
+    height: auto; /* Maintain aspect ratio */
+    margin-left: auto; /* Push image to the right */
+  }
+  section {
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 5px;
+    right: 70%;
+  }
+  input[type="text"], input[type="date"], input[type="time"], input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+  
+  footer {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
